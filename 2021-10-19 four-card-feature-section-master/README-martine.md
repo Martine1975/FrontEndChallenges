@@ -1,0 +1,146 @@
+# Frontend Mentor - Four card feature section solution
+
+This is a solution to the [Four card feature section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/four-card-feature-section-weK1eFYK). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
+
+**Note: Delete this note and update the table of contents based on what sections you keep.**
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- View the optimal layout for the site depending on their device's screen size
+
+
+## My process
+
+19-10 start van de challenge
+
+Beetje bekeken. Er zijn 4 overduidelijke kaartjes die hun eigenschappen en inhoud blijven behouden tussen de desktop en mobile.
+
+- Ik zie een border en schaduw bij de kaartjes
+- layout van de kaartjes verschilt aanzienlijk in de desktop. Een combi van row and column zo lijkt het.
+
+--> maar eerst mobiel
+- er zijn 5 lettertypegroottes;
+Style guide noemt poppins
+- Weights: 200, 400, 600
+Ik kan het als volgt doen:
+h.main
+weight 600?
+default
+h2
+weight 200
+p
+weight 400
+p
+smaller size
+
+laten we het zo proberen ;)
+
+even gespiekt bij Myrthe bij mijn vorige opdracht;
+ TOch anders: van klein naar groot
+p: tekst cards
+weight 400 tekst cards
+h1: Powererd
+weight 600
+h2 Reliable
+weight 200
+h4 Header cards
+weight 600
+kleiner lettertype
+h3 tekst Our Artificial
+weight 400
+
+back shadow
+
+25-10 Ik ben bezig met de background. Om een of andere reden is er ruimte tussen de middelste kaartgroep en de onderste kaart. 
+LET OP met position:
+
+position absolute is relatief aan het vorige gepositioneerde element.
+Dus..als je een absolute positie aangeeft gaat ie kijken naar hoe de body is gedefinieerd en wordt ie op de locatie geplaatst relatief van de body.
+
+Heb je echter een ancestor gedefineerd als relatief dan wordt ie daarop geplaatst.
+
+Dus in mijn geval is het
+container: relative of cards --> puzzelen--->
+overal relative aangeven tot de plek waar het overgaat naar absolute
+ 
+daarna absolute right en bottom
+
+
+GELEERD: meerdere classes maken en dan afzonderlijk definieren
+div{class="naam1 naam2"
+
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+
+### What I learned
+
+Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+
+To see how you can add code snippets, see below:
+
+```html
+<h1>Some HTML code I'm proud of</h1>
+```
+```css
+.proud-of-this-css {
+  color: papayawhip;
+}
+```
+```js
+const proudOfThisFunc = () => {
+  console.log('🎉')
+}
+```
+
+If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+
+**Note: Delete this note and the content within this section and replace with your own learnings.**
+
+### Continued development
+
+Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+
+**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+
+### Useful resources
+
+- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+
+**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+
+## Author
+
+- Website - [Add your name here](https://www.your-site.com)
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+
+**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+
+## Acknowledgments
+
+This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+
+**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**

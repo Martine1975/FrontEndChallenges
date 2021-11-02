@@ -1,0 +1,155 @@
+body {
+	background-color: hsl(0, 0%, 95%);
+	/* height: 100vh;
+	width: 100vw; */
+	}
+
+h1	{
+	font-family: 'Big Shoulders Display', cursive;
+	font-size: 40px;
+	color: hsl(0, 0%, 95%);
+	
+}
+p	{
+	font-family: Lexend Deca; 
+	font-size: 15px;
+	color: hsla(0, 0%, 100%, 0.75);
+	line-height: 2;
+	padding: 5px 0px 5px 0px;
+} 
+button 	{
+	font-family: Lexend Deca; 
+	font-size: 15px;
+	padding: 15px 40px 15px 40px;
+	border-radius: 30px;
+	border-style: solid;
+	border-color: hsl(0, 0%, 95%);
+	background-color: hsl(0, 0%, 95%);
+	position: absolute;
+	bottom: 50px;
+	}
+
+
+/* hier begint de responsive layout van de pagina */
+.container {
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch; 
+	background-color: hsl(0, 0%, 95%);
+	border-style: solid;
+	border-color: hsl(0, 0%, 95%);
+	border-width: 250px 100px 250px 100px;
+	justify-content: center;
+	max-width: 1440px;
+	}
+
+.card-sedan {
+	background-color: hsl(31, 77%, 52%);
+	border-radius: 10px 0px 0px 10px;
+	padding: 50px;
+	max-width: 210px;
+	min-height: 420px;
+	position: relative;
+}
+
+.card-suvs {
+	background-color: hsl(184, 100%, 22%);
+	padding: 50px;
+	max-width:210px;
+	min-height: 420px;
+	position: relative;
+}
+
+.card-luxury {
+	background-color: hsl(179, 100%, 13%);
+	padding: 50px;
+	border-radius: 0px 10px 10px 0px;
+	max-width: 210px;
+	min-height: 420px;
+	position: relative;
+}
+
+/* Responsive layout - zorgt ervoor dat de container in kolommen gaat */
+@media (max-width: 600px) { /*dit is de overgang naar mobiele website */
+	.container {
+		max-width: 375px;
+		display: flex;
+		flex-direction: column;
+		border-style: solid;
+		border-color: hsl(0, 0%, 95%);
+		border-width: 90px 24px 10px 24px;
+		justify-content: center;
+		align-items: center;
+		margin: auto;
+		}
+
+	.card-sedan {
+		min-height: 375px;
+		max-width: 225px;
+		background-color: hsl(31, 77%, 52%);
+		padding: 50px;
+		border-radius: 10px 10px 0px 0px;
+		position: relative;
+		}
+	.card-suvs {
+		min-height: 375px;
+		max-width: 225px;
+		background-color: hsl(184, 100%, 22%);
+		padding: 50px;
+		position: relative;
+		}
+	.card-luxury {
+		min-height: 375px;
+		max-width: 225px;
+		background-color: hsl(179, 100%, 13%);
+		padding: 50px;
+		border-radius: 0px 0px 10px 10px;
+		position: relative;
+		}
+	}
+/*onderstaande styling zorgt ervoor dat de text-color van de buttons klopt.
+De parent is het div element "card-..." de child, de button krijgt bij elk element de juiste kleur */
+
+.card-sedan > button {
+	 color: hsl(31, 77%, 52%);
+	 
+}
+.card-sedan > button:hover {
+	color: hsl(0, 0%, 95%);
+	background-color: hsl(31, 77%, 52%);
+	border-style: solid;
+	border-color: hsl(0, 0%, 95%);
+	cursor: pointer;
+}
+
+.card-suvs > button {
+	 color: hsl(184, 100%, 22%);
+}
+
+.card-suvs > button:hover {
+	color: hsl(0, 0%, 95%);
+	background-color: hsl(184, 100%, 22%);
+	border-style: solid;
+	border-color: hsl(0, 0%, 95%);
+	cursor: pointer;
+}
+.card-luxury > button {
+	 color: hsl(179, 100%, 13%);
+}
+
+.card-luxury > button:hover {
+	color: hsl(0, 0%, 95%);
+	background-color: hsl(179, 100%, 13%);
+	border-style: solid;
+	border-color: hsl(0, 0%, 95%);
+	cursor: pointer;
+
+}
+.attribution	{
+	font-size: 11px; 
+	text-align: center; 
+}
+.attribution a 	{
+	color: hsl(228, 45%, 44%); 
+}

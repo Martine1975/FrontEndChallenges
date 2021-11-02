@@ -1,0 +1,149 @@
+body {
+  background-color: hsl(233, 47%, 7%);
+  font-size: 15px;
+  margin: 175px 160px 175px 160px;
+  
+}
+h1 {
+  font-family: "Inter";
+  color: hsl(0, 0%, 100%);
+  font-size: 35px;
+}
+
+h2 {
+  font-family: "Inter";
+  color: hsl(0, 0%, 100%);
+  line-height: 0.5;
+  font-size: 22px;
+  padding-top: 23px;
+}
+
+h3 {
+  font-family: "Inter";
+  font-size: 13px;
+  font-weight: lighter;
+  color: hsla(0, 0%, 100%, 0.6);
+  line-height: 0.5;
+}
+
+p {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: hsla(0, 0%, 100%, 0.75);
+}
+span {
+  color: hsl(277, 64%, 61%);
+}
+
+.container {
+  /* grootte is 1110 bij 446px */
+  display: flex;
+  background-color: hsl(244, 38%, 16%);
+  flex-direction: row-reverse;
+  flex-flow: nowrap;
+  margin: auto;
+  border-radius: 10px 10px 10px 10px;
+  overflow: hidden;
+  width: 1110px; 
+  height: 446px;
+
+  }
+
+.card-picture {
+  /* width 545px height 446px */
+  background-color: hsl(277, 64%, 61%);
+  background-image: url(/images/image-header-desktop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 545px;
+  height: 446px;
+  background-blend-mode: multiply; 
+  order: 1; 
+}
+
+.card-text { 
+  /* width 585px (1110 - 545) height 446px */
+  text-align: left;
+  padding: 80px 100px 60px 75px;
+  width: 410px;   /* 585 -175px door padding */
+  height: 296px;  /* 446-150px door padding */
+}
+
+.card-text-stats {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 350px;  /* voor de breedte van de stats in de desktop */
+}
+.stats-companies{
+  
+}
+.stats-templates{
+
+}
+.stats-queries{
+
+}
+
+@media (max-width: 1440px) {
+  body{
+    margin: 60px 20px 20px 20px;
+  }
+  h1 {
+    font-size: 27px; 
+  }
+
+  .container {
+     /* width  350px length 780px */
+    display: flex;
+    width: 330px;
+    height: 780px;
+    background-color: hsl(244, 38%, 16%);
+    flex-direction:column-reverse;
+    margin: auto;
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+  }
+
+  .card-picture {
+    width: 330px; 
+    height: 244px; 
+    background-color: hsl(277, 64%, 61%);
+    background-image: url(/images/image-header-mobile.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;   
+    background-position: top;
+  }
+
+  .card-text {
+    /*  */
+    flex-grow: 4;
+    text-align: center;
+    padding: 30px;
+    width: 270px;
+    height: 506px;
+  }
+
+  .card-text-stats{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  width: unset;  /*zo haalt ie de breedte van de desktopsstats weg */
+  }
+  
+  .stats-companies{
+
+  }
+  
+  .stats-templates{
+
+  }
+  .stats-queries{
+
+  }
+}
