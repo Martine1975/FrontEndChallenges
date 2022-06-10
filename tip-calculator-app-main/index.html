@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"> 
+  <title>Frontend Mentor | Tip calculator app</title>
+
+</head>
+<body>
+  <div class="logo">
+      <img src="images/logo.svg" alt="SPLITTER">
+    </div>
+  <div class="container">
+    <div class="bill-card">
+      <div class="bill-amount">
+        <form id="input-form">
+          <!-- add Can't be zero to end of line label -->
+          <div class="labels">
+            <h3><label for="bill" id="label-bill">Bill</label></h3>
+            <div class="errormessage-label">
+                <h3>Can't be zero</h3>
+            </div>
+          </div>
+          <div class="bill-inputfield">
+              <input type="number" id="bill" name="bill" form="input-form" min="1" max="99" placeholder="0" tabindex="1"  onclick="OnBillValueClicked()" oninput="OnBillValueChanged(this.value)">
+          </div> 
+        </form>
+        </div>
+        <div class="tip-buttons">
+          <label>Select Tip %</label>
+          <div class="tip-percentage-buttons">
+            <input type="button" class="percentage" name="5%" value="5%" form="input-form" tabindex="2" onclick="OnPercentageValueClicked(this.value)">
+            <input type="button" class="percentage" name="10%" value="10%" form="input-form"  tabindex="3" onclick="OnPercentageValueClicked(this.value)">
+            <input type="button" class="percentage" name="15%" value="15%" form="input-form"  tabindex="4" onclick="OnPercentageValueClicked(this.value)">
+            <input type="button" class="percentage" name="20%" value="25%" form="input-form"  tabindex="5" onclick="OnPercentageValueClicked(this.value)">
+            <input type="button" class="percentage" name="25%" value="50%" form="input-form"  tabindex="6" onclick="OnPercentageValueClicked(this.value)">
+            <input type="number" id="tip-amount" name="custom" placeholder="Custom" form="input-form"  tabindex="7" onclick="OnCustomPercentageValueClicked()" oninput="OnCustomPercentageValueChanged(this.value)">
+          </div>
+        </div>
+        <div class="people-number">
+          <div class="labels-people">
+            <h3><label for="number" id="label-number">Number of People</label></h3>
+            <div class="errormessage-people">
+              <h3>Can't be zero</h3>
+            </div>
+          </div>
+            <input type="number" id="number-people" name="people" min="1" max="99" placeholder="0" form="input-form" tabindex="8" onclick="OnPeopleNumberClicked()" oninput="OnPeopleNumberChanged(this.value)">
+        </div>
+    </div> 
+    <div class="amount-card">
+      <div class="results-card">
+          <div class="tip-amount">
+            <div class="tip-amount-text">
+              <h1>Tip Amount</h1>
+              <p>/ person</p>
+          </div>
+            <div class="result-tip-amount">
+              <span><h2 id="tip-amount-end-value">$0.00</h2></span>
+            </div>
+          </div>
+          <div class="total-amount">
+            <div class="total-amount-text">
+                <h1>Total</h1>
+                <p>/ person</p>
+            </div>
+              <div class="result-total-amount">
+                <span><h2 id="total-amount">$0.00</h2></span>
+              </div>
+          </div>
+      </div>
+      <div class="reset-button">
+        <input type="reset" id="reset" name="reset" value="RESET" form="input-form" tabindex="9" onclick="OnResetPressed()">
+      </div>
+    </div>
+  </div>
+  <div class=" attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. </p>
+    <p>Coded by <a href="#">Martine Eekhof</a>.</p>
+  </div>
+</body>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,1095 @@
+/* Mobile Site */
+
+/* remove arrows on inputs */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Space Mono', monospace;
+    min-height: 100vh;
+    background-color: hsl(185, 41%, 84%);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo{
+    width: 375px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content:center;
+    align-items: center;
+    background-color: hsl(185, 41%, 84%);
+}
+.container{
+/* inside container there are two cards
+Flexbox-settings:
+Both cards are columns, nowrapped 
+Items in card are spaced between evenly
+and horizontally stretched
+*/
+    width: 375px;
+    height: 790px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;;
+    align-items:center;
+    background-color:  hsl(0, 0%, 100%);
+    padding: 34px 0px 35px 0px;
+    border-radius: 30px 30px 0px 0px;
+    box-sizing: border-box;
+}
+
+.bill-card{
+    width: 310px;
+    height: 435px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items:stretch;
+    box-sizing: border-box;
+}
+.bill-amount{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items:flex-start;
+
+}
+
+#input-form{
+    width: 310px;
+    height: 76px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:stretch;
+    font-weight: 700;
+    font-size: 15px;
+    color:hsl(186, 14%, 43%);
+    box-sizing: border-box;
+}
+
+/* style the class labels as row for the error message */
+.labels{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content:flex-start;
+    align-items:flex-start;
+    color:hsl(186, 14%, 43%);
+}
+.errormessage-label{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+    text-align: right;
+    color: #B87E70;
+    visibility: hidden;
+}
+
+.bill-inputfield{
+    width: 310px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content:space-between;
+    align-items: stretch;
+}
+/* style the bill textfield */
+.bill-inputfield input[type=number] {
+    -moz-appearance: textfield; /*remove the up/down arrow from number */
+    height: 42px;
+    background-image: url(images/icon-dollar.svg);
+    background-repeat: no-repeat;
+    background-position: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    text-align: right;
+    border-style: solid;
+    border-width: 2px;
+    border-color: hsl(189, 41%, 97%);
+    border-radius: 5px;
+    padding-right: 20px;
+    outline:none;
+    font-weight: 700;
+    font-size: 24px;
+    font-family: 'Space Mono', monospace;
+    color: hsl(185, 41%, 84%); /* when filling in: hsl(183, 100%, 15%); */
+    background-color:hsl(189, 41%, 97%);
+    
+}
+
+/* style the '0' and showing it on loading page */
+.bill-inputfield input[type=number]::placeholder{
+    color: hsl(180, 9%, 71%);
+}
+/* make the border visible on hover */
+.bill-inputfield input[type=number]:hover{
+    -moz-appearance: textfield;
+    outline: none;
+    border-style: solid;
+    border-width: 2px;
+    border-color:  #9FE8DF;      
+    border-radius: 5px;
+    color: hsl(183, 100%, 15%);
+    cursor: pointer;
+
+}
+
+
+.tip-buttons{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items:stretch;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 3.5;
+    color:hsl(186, 14%, 43%);
+}
+.tip-percentage-buttons{
+     /* in row; 6 boxes wrapped,spaced between and centered
+    items vertically centered and spce between*/
+    height: 195px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: stretch;
+    
+
+}
+.tip-percentage-buttons input[type=button]{
+    /*remove the up/down arrow from number */
+    outline:none;
+    width: 148px;
+    height:49px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: transparent;
+    background-color: hsl(183, 100%, 15%);
+    font-family: 'Space Mono', monospace;
+    color: hsl(189, 41%, 97%);
+    font-weight: 700;
+    font-size: 24px;
+
+}
+
+
+/* styling for hovering using mouse */
+.tip-percentage-buttons input[type=button]:hover{
+    border-style: solid;
+    border-color: transparent;
+    border-width: 2px;
+    border-radius: 5px;
+    background-color:  #9FE8DF;
+    cursor: pointer;
+}
+
+
+.tip-percentage-buttons input[type=button]:focus{
+    background-color: #9FE8DF   ;   
+    color: hsl(183, 100%, 15%);
+}
+
+.tip-percentage-buttons input[type=button].active{
+    background-color:hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+
+.tip-percentage-buttons input[type=button].active:hover{
+    background-color:hsl(172, 67%, 45%);
+}
+/* styling for the inputbutton Custom */
+.tip-percentage-buttons input[type=number]{
+    -moz-appearance: textfield;
+    /* remove blue standard outline  */
+    outline:none;
+    width: 148px;
+    height:49px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: transparent;
+    background-color:  hsl(189, 41%, 97%);
+    font-family: 'Space Mono', monospace;
+    color:hsl(186, 14%, 43%);
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+}
+.tip-percentage-buttons input[type=number]::placeholder{
+    /* color for Custom in number button */
+    color: hsl(180, 9%, 71%);
+}
+
+.tip-percentage-buttons input[type=number]:hover{
+    background-color: hsl(202, 50%, 97%);
+    border-style: solid;
+    border-color: transparent;
+    border-width: 2px;
+    border-radius: 5px;
+    background-color: #9FE8DF;
+    cursor: pointer;
+    color: hsl(183, 100%, 15%);
+}
+/* styling for buttons when using tab */
+/* .tip-percentage-buttons input[type=button]:focus{
+    background-color: #9FE8DF   ;   
+    color: hsl(183, 100%, 15%);
+} */
+
+/* styling for Custom when clicked/tabbed */
+.tip-percentage-buttons input[type=number]:focus{
+    -moz-appearance: textfield;
+    background-color: hsl(202, 50%, 97%);
+    border-style: solid;
+    border-width: 2px;
+    border-color:  #9FE8DF;
+    border-radius: 5px;
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(183, 100%, 15%);
+}
+
+/* styling for placeholder when clicked/tabbed */
+.tip-percentage-buttons input[type=number]:focus::placeholder{
+    color: transparent;
+}
+/* styling for custom button when filled */
+.tip-percentage-buttons input[type=number].active{
+    color: hsl(183, 100%, 15%);
+    border-style: solid;
+    border-width: 2px;
+    border-color:  #9FE8DF;
+    background-color: hsl(0, 0%, 100%);
+}
+
+/* styling for hovering using mouse */
+.tip-percentage-buttons input[type=button]:hover{
+    border-style: solid;
+    border-color: transparent;
+    border-width: 2px;
+    border-radius: 5px;
+    background-color:  #9FE8DF;
+    cursor: pointer;
+    color: hsl(183, 100%, 15%);
+}
+
+.tip-percentage-buttons input[type=number]:hover{
+    border-style: solid;
+    border-color: transparent;
+    border-width: 2px;
+    border-radius: 5px;
+    background-color: #9FE8DF;
+    cursor: pointer;
+    color: hsl(183, 100%, 15%);
+}
+/* styling for buttons when using tab */
+
+
+/* styling for Custom when clicked/tabbed */
+.tip-percentage-buttons input[type=number]:focus{
+    -moz-appearance: textfield;
+    border-style: solid;
+    border-width: 2px;
+    border-color:  #9FE8DF;
+    border-radius: 5px;
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(183, 100%, 15%);
+}
+
+/* styling for placeholder when clicked/tabbed */
+.tip-percentage-buttons input[type=number]:focus::placeholder{
+    color: transparent;
+}
+.labels-people{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content:flex-start;
+    align-items:flex-start;
+    color:hsl(186, 14%, 43%);
+}
+
+.people-number{
+    height:80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    font-weight: 700;
+    font-size: 15px;
+    color:hsl(186, 14%, 43%);
+}
+.errormessage-people{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+    text-align: right;
+    visibility: hidden;
+    color: #B87E70;
+    visibility: hidden;
+    
+}
+/* styling for Number of People inputfield */
+.people-number input[type=number] {
+    width: 310px;
+    height: 47px;
+    background-image: url(images/icon-person.svg);
+    -moz-appearance: textfield; /*remove the up/down arrow from number */
+    background-repeat: no-repeat;
+    background-position: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    text-align: right;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 2px;
+    border-color: hsl(189, 41%, 97%);
+    border-radius: 5px;
+    padding-right: 20px;
+    outline:none;
+    font-weight: 700;
+    font-size: 24px;
+    font-family: 'Space Mono', monospace;
+    color: hsl(185, 41%, 84%); /* when filling in: hsl(183, 100%, 15%); */
+    background-color:hsl(189, 41%, 97%);
+}
+/* style the '0' and showing it on loading page */
+.people-number input[type=number]::placeholder{
+    color: hsl(180, 9%, 71%);
+}
+/* make the border visible on hover */
+.people-number input[type=number]:hover{
+    -moz-appearance: textfield;
+    outline: none;
+    border-style: solid;
+    border-width: 2px;
+    border-color:  #9FE8DF;      
+    border-radius: 5px;
+    color: hsl(183, 100%, 15%);
+    cursor: pointer;
+
+}
+/* border visible when clicked and remove placeholder and change text styling */
+.people-number input[type=number]:focus{
+    -moz-appearance: textfield;
+    outline: none;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #9FE8DF;
+    border-radius: 5px;
+    color: hsl(183, 100%, 15%);
+ }
+.people-number input[type=number]:focus::placeholder{
+    color: transparent;
+}
+.active, .number-people input[type=number]{
+    color: hsl(183, 100%, 15%);
+}
+
+.amount-card{
+    /* inside coard three classes 
+    tip-amount-calculated
+    total-amount-person
+    reset-button
+    */
+    box-sizing: border-box;
+    width: 327px;
+    height: 256px;
+    padding: 20px 0px 10px 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color:hsl(183, 100%, 15%);
+    border-radius: 15px;
+
+}
+.results-card{
+    height:120px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.tip-amount{  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:space-between;
+}
+.tip-amount-text{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items:stretch;
+    text-align: left;
+}
+.result-tip-amount{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center; 
+}
+
+.total-amount{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: center; 
+}
+.total-amount-text{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: left;
+}
+.result-total-amount{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center; 
+}
+input[type=reset] {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 282px;
+    height:45px;
+    outline:none;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+    color:hsl(183, 87%, 21%);
+    font-weight: 700;
+    font-size: 20px;
+    background-color: #0D686D;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: transparent;
+    font-family: 'Space Mono', monospace;
+    color:hsl(183, 87%, 21%);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+input[type=reset]:hover{
+    border-style: solid;
+    border-color: transparent;
+    border-width: 1px;
+    border-radius: 5px;
+    background-color: #9FE8DF;
+    cursor: pointer;
+    color: hsl(183, 100%, 15%);
+}
+input[type=reset].active{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 282px;
+    height:45px;
+    outline:none;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 20px;
+    background-color:hsl(172, 67%, 45%);
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: transparent;
+    font-family: 'Space Mono', monospace;
+    color:hsl(183, 87%, 21%);
+    font-weight: 700;
+    font-size: 20px;
+}
+input[type=reset]:hover.active{
+    border-style: solid;
+    border-color: transparent;
+    border-width: 1px;
+    border-radius: 5px;
+    background-color: #9FE8DF;
+    cursor: pointer;
+    color: hsl(183, 100%, 15%);
+}
+h1{
+    font-size: 15px;
+    color: white;
+    line-height: 0;
+}
+
+h2{
+    font-size: 32px;
+    font-weight: 700;
+    color:hsl(172, 67%, 45%);
+    line-height: 0;
+}
+
+p{
+    font-size: 12px;
+    font-weight: 700;
+    color:hsl(172, 67%, 45%);
+    line-height: 0;
+}
+h3{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 0;
+}
+
+.attribution{
+    display: flex;
+    justify-content: space-evenly;
+    align-items:stretch;
+}
+.attribution p{
+    font-size: 10px;
+    font-weight: 400;
+    line-height: normal;
+}
+.attribution a 
+{
+       color: hsl(172, 67%, 45%); 
+       font-weight: 400;
+}
+
+
+/* DESKTOP SITE */
+@media only screen and (min-width: 1024px) {
+
+    body {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Space Mono', monospace;
+        min-height: 100vh;
+        background-color: hsl(185, 41%, 84%);
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .logo{
+        width: 920px;
+        height: 145px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content:flex-start;
+        align-items: center;
+        background-color: hsl(185, 41%, 84%);
+    }
+    .container{
+    /* inside container there are two cards
+    Flexbox-settings:
+    Both cards are columns, nowrapped 
+    Items in card are spaced between evenly
+    and horizontally stretched
+    */
+        width: 920px;
+        height: 480px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items:center;
+        background-color:  hsl(0, 0%, 100%);
+        border-radius: 30px;
+        padding: 34px 0px 35px 0px;
+        box-sizing: border-box;
+    }
+
+    .bill-card{
+        width: 380px;
+        height: 388px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items:stretch;
+        box-sizing: border-box;
+    }
+    .bill-amount{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content:flex-start;
+        align-items:stretch;
+
+    }
+
+    #input-form{
+        width: 380px;
+        height:75px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items:stretch;
+        font-weight: 700;
+        font-size: 15px;
+        color:hsl(186, 14%, 43%);
+        box-sizing: border-box;
+    }
+
+
+    .bill-inputfield{
+        width: 380px;
+        height: 47px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content:space-between;
+        align-items: stretch;
+    }
+    /* style the bill textfield */
+    .bill-inputfield input[type=number] {
+        -moz-appearance: textfield; /*remove the up/down arrow from number */
+        width: 380px;
+        background-image: url(images/icon-dollar.svg);
+        background-repeat: no-repeat;
+        background-position: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        text-align: right;
+        border-style: solid;
+        border-width: 2px;
+        border-color: hsl(189, 41%, 97%);
+        border-radius: 5px;
+        padding-right: 20px;
+        outline:none;
+        font-weight: 700;
+        font-size: 24px;
+        font-family: 'Space Mono', monospace;
+        color: hsl(185, 41%, 84%); /* when filling in: hsl(183, 100%, 15%); */
+        background-color:hsl(189, 41%, 97%);
+        
+    }
+
+    /* style the '0' and showing it on loading page */
+    .bill-inputfield input[type=number]::placeholder{
+        color: hsl(180, 9%, 71%);
+    }
+    /* make the border visible on hover */
+    .bill-inputfield input[type=number]:hover{
+        -moz-appearance: textfield;
+        outline: none;
+        background-color: hsl(202, 50%, 97%);
+        border-style: solid;
+        border-width: 2px;
+        border-color:hsl(173, 61%, 77%);      
+        border-radius: 5px;
+        color: hsl(183, 100%, 15%);
+        cursor: pointer;
+    }
+
+    /* border visible when clicked and remove placeholder and change text styling */
+    .bill-inputfield input[type=number]:focus{
+        -moz-appearance: textfield;
+        background-color: hsl(202, 50%, 97%);
+        outline: none;
+        border-style: solid;
+        border-width: 2px;
+        border-color: hsl(173, 61%, 77%);
+        border-radius: 5px;
+        color: hsl(183, 100%, 15%);
+    }
+    .bill-inputfield input[type=number]:focus::placeholder{
+        color: transparent;
+    }
+    .active, .bill-inputfield input[type=number]{
+        color: hsl(183, 100%, 15%);
+    }
+    .tip-buttons{
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: stretch;
+        font-weight: 700;
+        font-size: 15px;
+        color:hsl(186, 14%, 43%);
+    }
+
+    .tip-percentage-buttons{
+        /* in row; 6 boxes wrapped,spaced between and centered
+        items vertically centered and spce between*/
+        height: 130px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items:center;  
+    }
+    .tip-percentage-buttons input[type=button]{
+        /*remove the up/down arrow from number */
+        outline:none;
+        width: 117px;
+        height: 48px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border-width: 2px;
+        border-color: transparent;
+        /* background-color: hsl(183, 100%, 15%); */
+        font-family: 'Space Mono', monospace;
+        color: hsl(189, 41%, 97%);
+        font-weight: 700;
+        font-size: 24px;
+    }
+    /* styling for hovering using mouse */
+    .tip-percentage-buttons input[type=button]:hover{
+        border-style: solid;
+        border-color: transparent;
+        border-width: 2px;
+        border-radius: 5px;
+        background-color:  #9FE8DF;
+        cursor: pointer;
+    }
+    
+    .tip-percentage-buttons input[type=button].active{
+        background-color:hsl(172, 67%, 45%);
+        color: hsl(183, 100%, 15%);
+    }
+    .tip-percentage-buttons input[type=button].active:hover{
+        background-color:hsl(172, 67%, 45%);
+    }
+    
+    /* styling for the inputbutton Custom */
+    .tip-percentage-buttons input[type=number]{
+        -moz-appearance: textfield;
+        /* remove blue standard outline  */
+        outline:none;
+        width: 117px;
+        height: 50px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border-width: 2px;
+        border-color: transparent;
+        background-color:  hsl(189, 41%, 97%);
+        font-family: 'Space Mono', monospace;
+        color:hsl(186, 14%, 43%);
+        font-weight: 700;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .tip-percentage-buttons input[type=number]::placeholder{
+        /* color for Custom in number button */
+        color: hsl(180, 9%, 71%);
+    }
+    
+    .tip-percentage-buttons input[type=number].active:hover{
+        background-color: hsl(0, 0%, 100%);
+    }
+    .tip-percentage-buttons input[type=number]:hover{
+        border-style: solid;
+        border-color: transparent;
+        border-width: 2px;
+        border-radius: 5px;
+        background-color: #9FE8DF;
+        cursor: pointer;
+        color: hsl(183, 100%, 15%);
+    }
+    /* styling for Custom when clicked/tabbed */
+    .tip-percentage-buttons input[type=number]:focus{
+        -moz-appearance: textfield;
+        background-color: hsl(202, 50%, 97%);
+        border-style: solid;
+        border-width: 2px;
+        border-color:  #9FE8DF;
+        border-radius: 5px;
+        background-color: hsl(0, 0%, 100%);
+        color: hsl(183, 100%, 15%);
+    }
+
+    /* styling for placeholder when clicked/tabbed */
+    .tip-percentage-buttons input[type=number]:focus::placeholder{
+        color: transparent;
+    }
+    /* styling for custom button when filled */
+    .tip-percentage-buttons input[type=number].active{
+        color: hsl(183, 100%, 15%);
+        border-style: solid;
+        border-width: 2px;
+        border-color:  #9FE8DF;
+        background-color: hsl(0, 0%, 100%);
+    }
+    .people-number{
+        height: 79px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items:stretch;
+        flex-wrap: nowrap;
+        font-weight: 700;
+        font-size: 15px;
+        color:hsl(186, 14%, 43%);
+    }
+    /* styling for Number of People inputfield */
+    .people-number input[type=number] {
+        width: 380px;
+        height: 47px;
+        background-image: url(images/icon-person.svg);
+        -moz-appearance: textfield; /*remove the up/down arrow from number */
+        background-repeat: no-repeat;
+        background-position: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        text-align: right;
+        box-sizing: border-box;
+        border-style: solid;
+        border-width: 2px;
+        border-color: hsl(189, 41%, 97%);
+        border-radius: 5px;
+        padding-right: 20px;
+        outline:none;
+        font-weight: 700;
+        font-size: 24px;
+        font-family: 'Space Mono', monospace;
+        color: hsl(185, 41%, 84%); /* when filling in: hsl(183, 100%, 15%); */
+        background-color:hsl(189, 41%, 97%);
+    }
+    /* style the '0' and showing it on loading page */
+    .people-number input[type=number]::placeholder{
+        color:hsl(180, 9%, 71%);
+    }
+    /* make the border visible on hover */
+    .people-number input[type=number]:hover{
+        -moz-appearance: textfield;
+        outline: none;
+        border-style: solid;
+        border-width: 2px;
+        border-color:  #9FE8DF;      
+        border-radius: 5px;
+        color: hsl(183, 100%, 15%);
+        cursor: pointer;
+
+    }
+    /* border visible when clicked and remove placeholder and change text styling */
+    .people-number input[type=number]:focus{
+        -moz-appearance: textfield;
+        outline: none;
+        border-style: solid;
+        border-width: 2px;
+        border-color: #9FE8DF;
+        border-radius: 5px;
+        color: hsl(183, 100%, 15%);
+    }
+    .people-number input[type=number]:focus::placeholder{
+        color: transparent;
+    }
+    .active, .people-number input[type=number]{
+        color: hsl(183, 100%, 15%);
+    }
+    
+    .amount-card{
+        /* inside coard three classes 
+        tip-amount-calculated
+        total-amount-person
+        reset-button
+        */
+        box-sizing: border-box;
+        width: 420px;
+        height: 420px;
+        padding: 40px 0px 42px 0px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content:space-between;
+        align-items: center;
+        background-color:hsl(183, 100%, 15%);
+        border-radius: 15px;
+
+    }
+    .results-card{
+        width: 330px;
+        height: 175px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+    
+    .tip-amount{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content:space-between;
+    }
+    .tip-amount-text{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items:flex-start;
+        text-align: left;
+    }
+    .result-tip-amount{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center; 
+    }
+
+    .total-amount{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:space-between;
+        align-items: center; 
+    }
+    .total-amount-text{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        text-align: left;
+    }
+    .result-total-amount{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center; 
+    }
+    input[type=reset] {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 330px;
+        height:48px;
+        outline:none;
+        box-sizing: border-box;
+        font-family: 'Space Mono', monospace;
+        color:hsl(183, 87%, 21%);
+        font-weight: 700;
+        font-size: 20px;
+        background-color: #0D686D;
+        border-radius: 5px;
+        border-width: 1px;
+        border-color: transparent;
+        font-family: 'Space Mono', monospace;
+        color:hsl(183, 87%, 21%);
+        font-weight: 700;
+        font-size: 20px;
+    }
+   
+    input[type=reset]:hover{
+        border-style: solid;
+        border-color: transparent;
+        border-width: 1px;
+        border-radius: 5px;
+        background-color: #9FE8DF;
+        cursor: pointer;
+        color: hsl(183, 100%, 15%);
+    }
+    input[type=reset].active{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 330px;
+        height:48px;
+        outline:none;
+        box-sizing: border-box;
+        font-family: 'Space Mono', monospace;
+        font-weight: 700;
+        font-size: 20px;
+        background-color:hsl(172, 67%, 45%);
+        border-radius: 5px;
+        border-width: 1px;
+        border-color: transparent;
+        font-family: 'Space Mono', monospace;
+        color:hsl(183, 87%, 21%);
+        font-weight: 700;
+        font-size: 20px;
+    }
+    input[type=reset]:hover.active{
+        border-style: solid;
+        border-color: transparent;
+        border-width: 1px;
+        border-radius: 5px;
+        background-color: #9FE8DF;
+        cursor: pointer;
+        color: hsl(183, 100%, 15%);
+    }
+
+    h1{
+        font-size: 15px;
+        color: white;
+        line-height: 0;
+    }
+
+    h2{
+        font-size: 48px;
+        font-weight: 700;
+        color:hsl(172, 67%, 45%);
+        line-height: 0;
+    }
+
+    p{
+        font-size: 12px;
+        font-weight: 700;
+        color:hsl(172, 67%, 45%);
+        line-height: 0;
+    }
+  
+    .attribution{
+        display: flex;
+        justify-content: space-evenly;
+        align-items:stretch;
+    }
+    .attribution p{
+        font-size: 10px;
+        font-weight: 400;
+        line-height: normal;
+    }
+    .attribution a 
+    {
+        color: hsl(172, 67%, 45%); 
+        font-weight: 400;
+    }
+}
